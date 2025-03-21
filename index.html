@@ -10,7 +10,7 @@
         /* 🌌 Style général */
         body {
             font-family: 'Roboto', sans-serif;
-            background: linear-gradient(135deg, #1a1a2e, #16213e); /* Dégradé foncé */
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
             color: #ffffff;
             margin: 0;
             padding: 0;
@@ -24,7 +24,7 @@
             position: relative;
         }
 
-        /* 🌟 Ajout d'étoiles avec CSS */
+        /* 🌟 Ajout d'étoiles */
         body::before {
             content: '';
             position: absolute;
@@ -46,25 +46,6 @@
             margin-bottom: 20px;
         }
 
-        /* 🎯 Bouton de formulaire */
-        .btn {
-            background-color: #e91e63;
-            color: white;
-            border: none;
-            padding: 15px 30px;
-            margin: 20px;
-            font-size: 1.2rem;
-            cursor: pointer;
-            border-radius: 30px;
-            transition: transform 0.2s ease, background-color 0.3s ease;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-        }
-
-        .btn:hover {
-            transform: scale(1.1);
-            background-color: #ff4081;
-        }
-
         /* 📩 Formulaire */
         .form-container {
             background-color: rgba(0, 0, 0, 0.7);
@@ -74,7 +55,7 @@
             margin: 20px;
             max-width: 400px;
             animation: fadeIn 0.5s ease;
-            display: none; /* Masqué par défaut */
+            width: 100%;
         }
 
         input, textarea {
@@ -106,23 +87,6 @@
         .submit-btn:hover {
             background-color: #45a049;
             transform: scale(1.05);
-        }
-
-        /* 🔙 Bouton Retour */
-        .back-btn {
-            background-color: #ff4081;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 8px;
-            cursor: pointer;
-            margin-top: 10px;
-            transition: background-color 0.3s ease;
-            font-size: 1rem;
-        }
-
-        .back-btn:hover {
-            background-color: #e91e63;
         }
 
         @keyframes fadeIn {
@@ -186,8 +150,7 @@
 
 <h1>Liakïm Animaker</h1>
 
-<button class="btn" onclick="showForm()">Remplir le formulaire</button>
-
+<!-- ✅ Formulaire directement affiché -->
 <div class="form-container" id="orderForm">
     <form name="contact" method="POST" netlify>
         <input type="text" name="Nom de la chaîne" placeholder="Nom de la chaîne" required><br>
@@ -195,15 +158,14 @@
         <input type="tel" name="Téléphone" placeholder="Numéro de téléphone" required><br>
         <textarea name="Description" placeholder="Description de la miniature" required></textarea><br>
         <button type="submit" class="submit-btn">Envoyer</button>
-        <button type="button" class="back-btn" onclick="hideForm()">Retour</button>
     </form>
 </div>
 
 <h2>✨ Portfolio ✨</h2>
 <div class="gallery">
-    <img src="images/minia.png" alt="Miniature exemple 1">
-    <img src="images/pok.png" alt="Miniature exemple 2">
-    <img src="images/profil.png" alt="Avatar exemple">
+    <img src="./images/minia.png" alt="Miniature exemple 1">
+    <img src="./images/pok.png" alt="Miniature exemple 2">
+    <img src="./images/profil.png" alt="Avatar exemple">
 </div>
 
 <a href="https://www.youtube.com/@liakimanimationoff" target="_blank" class="youtube-link">
@@ -229,39 +191,6 @@
     © 2025 Liakïm Animaker - Tous droits réservés
 </footer>
 
-<script>
-
-    document.addEventListener('DOMContentLoaded', () => {
-    document.querySelector('.btn').addEventListener('click', () => {
-        document.getElementById('orderForm').style.display = 'block';
-    });
-
-    document.querySelector('.back-btn').addEventListener('click', () => {
-        document.getElementById('orderForm').style.display = 'none';
-    });
-});
-
-
-    function hideForm() {
-        document.getElementById('orderForm').style.display = 'none';
-    }
-git add images
-git commit -m "images"
-git push origin main
-
-    git add robots.txt
-git commit -m "Ajout du fichier robots.txt"
-git push origin main
-
-    git add googleXXXXXXXX.html
-git commit -m "Ajout du fichier de validation Google"
-git push origin main
-
-    Uncaught ReferenceError
-404 Not Found
-Mixed Content Error
-    
-</script>
-
 </body>
 </html>
+
