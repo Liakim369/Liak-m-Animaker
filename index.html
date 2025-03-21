@@ -230,9 +230,17 @@
 </footer>
 
 <script>
-    function showForm() {
+
+    document.addEventListener('DOMContentLoaded', () => {
+    document.querySelector('.btn').addEventListener('click', () => {
         document.getElementById('orderForm').style.display = 'block';
-    }
+    });
+
+    document.querySelector('.back-btn').addEventListener('click', () => {
+        document.getElementById('orderForm').style.display = 'none';
+    });
+});
+
 
     function hideForm() {
         document.getElementById('orderForm').style.display = 'none';
