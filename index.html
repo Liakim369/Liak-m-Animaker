@@ -49,8 +49,38 @@
 
         .description {
             font-size: 1.2rem;
-            color: #ff4081;
+            color: #ffffff; /* Texte en blanc */
             margin-bottom: 20px;
+            max-width: 600px;
+            line-height: 1.5;
+        }
+
+        /* 🚀 Fusée */
+        .rocket {
+            position: absolute;
+            width: 60px;
+            top: 60%;
+            left: -100px;
+            z-index: 10;
+            animation: flyRocket 5s linear infinite;
+        }
+
+        @keyframes flyRocket {
+            0% {
+                left: -100px;
+                top: 60%;
+                transform: rotate(-30deg);
+            }
+            50% {
+                left: 50%;
+                top: 30%;
+                transform: rotate(-10deg);
+            }
+            100% {
+                left: 110%;
+                top: 10%;
+                transform: rotate(0deg);
+            }
         }
 
         /* 📩 Formulaire */
@@ -159,6 +189,9 @@
 </head>
 <body>
 
+<!-- 🚀 Fusée -->
+<img src="https://cdn-icons-png.flaticon.com/512/3014/3014447.png" alt="Rocket" class="rocket">
+
 <h1>LIAKÏM ANIMAKER</h1>
 <p class="description">
     Tu veux une bonne miniature Youtube ou simplement une illustration ? Tu es au bon endroit !
@@ -192,14 +225,6 @@
     <p>- Illustration : 32 € 💶</p>
 </div>
 
-<!-- 🔥 À propos de moi -->
-<h2>À propos de moi</h2>
-<p>
-    Moi c'est Liakïm Animation (alias Just Me), l'art me passionne depuis tout petit.  
-    Aguéri dans les domaines de l'animation 2D et du design, je vous propose désormais d'obtenir mon art  
-    en miniature YouTube ou en illustration pour vos projets personnels !
-</p>
-
 <!-- ✅ Footer -->
 <footer>
     © 2025 Liakïm Animaker - Tous droits réservés
@@ -207,3 +232,4 @@
 
 </body>
 </html>
+
