@@ -49,43 +49,15 @@
 
         .description {
             font-size: 1.2rem;
-            color: #ffffff; /* Texte en blanc */
+            color: #ffffff;
             margin-bottom: 20px;
             max-width: 600px;
             line-height: 1.5;
         }
 
-        /* 🚀 Fusée */
-        .rocket {
-            position: absolute;
-            width: 60px;
-            top: 60%;
-            left: -100px;
-            z-index: 10;
-            animation: flyRocket 5s linear infinite;
-        }
-
-        @keyframes flyRocket {
-            0% {
-                left: -100px;
-                top: 60%;
-                transform: rotate(-30deg);
-            }
-            50% {
-                left: 50%;
-                top: 30%;
-                transform: rotate(-10deg);
-            }
-            100% {
-                left: 110%;
-                top: 10%;
-                transform: rotate(0deg);
-            }
-        }
-
         /* 📩 Formulaire */
         .form-container {
-            background-color: rgba(0, 0, 0, 0.3); /* Fond quasi transparent */
+            background-color: rgba(0, 0, 0, 0.3);
             padding: 20px;
             border-radius: 12px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.7);
@@ -189,9 +161,6 @@
 </head>
 <body>
 
-<!-- 🚀 Fusée -->
-<img src="https://cdn-icons-png.flaticon.com/512/3014/3014447.png" alt="Rocket" class="rocket">
-
 <h1>LIAKÏM ANIMAKER</h1>
 <p class="description">
     Tu veux une bonne miniature Youtube ou simplement une illustration ? Tu es au bon endroit !
@@ -199,7 +168,7 @@
 
 <!-- ✅ Formulaire directement affiché -->
 <div class="form-container" id="orderForm">
-    <form name="contact" method="POST" netlify>
+    <form action="https://formspree.io/f/{TON_ID_FORMSPREE}" method="POST">
         <input type="text" name="Nom de la chaîne" placeholder="Nom de la chaîne" required><br>
         <input type="email" name="Email" placeholder="Adresse email" required><br>
         <input type="tel" name="Téléphone" placeholder="Numéro de téléphone" required><br>
@@ -225,7 +194,6 @@
     <p>- Illustration : 32 € 💶</p>
 </div>
 
-<!-- ✅ Footer -->
 <footer>
     © 2025 Liakïm Animaker - Tous droits réservés
 </footer>
