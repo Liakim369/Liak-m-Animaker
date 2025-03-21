@@ -41,21 +41,29 @@
         h1 {
             font-size: 3rem;
             color: #ffffff;
+            text-transform: uppercase;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
             margin-top: 30px;
+            margin-bottom: 10px;
+        }
+
+        .description {
+            font-size: 1.2rem;
+            color: #ff4081;
             margin-bottom: 20px;
         }
 
         /* 📩 Formulaire */
         .form-container {
-            background-color: rgba(0, 0, 0, 0.7);
+            background-color: rgba(0, 0, 0, 0.3); /* Fond quasi transparent */
             padding: 20px;
             border-radius: 12px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.7);
             margin: 20px;
             max-width: 400px;
-            animation: fadeIn 0.5s ease;
             width: 100%;
+            animation: fadeIn 0.5s ease;
+            backdrop-filter: blur(8px);
         }
 
         input, textarea {
@@ -71,9 +79,10 @@
             box-sizing: border-box;
         }
 
+        /* ✅ Bouton d'envoi */
         .submit-btn {
-            background-color: #4caf50;
-            color: white;
+            background-color: #ffffff;
+            color: #000;
             border: none;
             padding: 12px 20px;
             border-radius: 8px;
@@ -82,10 +91,12 @@
             font-size: 1rem;
             width: 100%;
             margin-top: 10px;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
         }
 
         .submit-btn:hover {
-            background-color: #45a049;
+            background-color: #f1f1f1;
             transform: scale(1.05);
         }
 
@@ -148,7 +159,10 @@
 </head>
 <body>
 
-<h1>Liakïm Animaker</h1>
+<h1>LIAKÏM ANIMAKER</h1>
+<p class="description">
+    Tu veux une bonne miniature Youtube ou simplement une illustration ? Tu es au bon endroit !
+</p>
 
 <!-- ✅ Formulaire directement affiché -->
 <div class="form-container" id="orderForm">
@@ -193,4 +207,3 @@
 
 </body>
 </html>
-
