@@ -276,6 +276,29 @@
     <img src="./images/mars.png" alt="Illustration exemple 2">
 </div>
 
+<style>
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        justify-items: center;
+        margin-top: 20px;
+    }
+
+    .gallery img {
+        width: 220px;
+        height: 120px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+        transition: transform 0.3s ease;
+        object-fit: cover;
+    }
+
+    .gallery img:hover {
+        transform: scale(1.05);
+    }
+</style>
+
 <!-- ✅ Lien YouTube -->
 <a href="https://www.youtube.com/@liakimanimationoff" target="_blank" class="youtube-link">
     Ma chaîne YouTube
