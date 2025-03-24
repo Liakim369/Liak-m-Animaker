@@ -200,7 +200,74 @@
             50% {
                 transform: translateY(-10px);
             }
+            <head>
+    <!-- ... (ton code existant) -->
+    <style>
+        /* ✅ Planète Saturne */
+        .saturn {
+            position: absolute;
+            left: -60px;
+            top: 50%;
+            width: 80px;
+            height: 80px;
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/e/e4/Saturn_true_color.jpg');
+            background-size: cover;
+            border-radius: 50%;
+            z-index: 10;
+            animation: floatSaturn 4s infinite ease-in-out;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
         }
+
+        /* ✅ Effet de flottement */
+        @keyframes floatSaturn {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* ✅ Anneaux de Saturne */
+        .saturn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 120px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+            transform: translate(-50%, -50%) rotate(-20deg);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body>
+
+<!-- ✅ Formulaire -->
+<div style="position: relative;">
+    <div class="saturn"></div>
+    <form action="https://formspree.io/f/mvgkkwkj" method="POST">
+        <label>
+            Ton email:
+            <input type="email" name="email">
+        </label>
+        <label>
+            Nom de ta chaîne (Youtube, Insta, Tik Tok):
+            <input type="text" name="nom">
+        </label>
+        <label>
+            Décris ta miniature (sois précis!):
+            <textarea name="description"></textarea>
+        </label>
+        <button class="submit-btn" type="submit">Envoyer</button>
+    </form>
+</div>
+
+</body>
+       }
     </style>
 </head>
 <body>
