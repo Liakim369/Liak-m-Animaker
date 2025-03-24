@@ -223,6 +223,16 @@
             star.style.width = star.style.height = `${Math.random() * 4 + 1}px`;
             starsContainer.appendChild(star);
         }
+                /* ✅ Images carrées */
+        .gallery .square {
+            width: 100px;
+            height: 100px;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
     }
 
     // ✅ Déplacement au scroll
@@ -278,8 +288,8 @@
 <div class="gallery">
     <img src="./images/minia.png" alt="Miniature exemple 1">
     <img src="./images/pok.png" alt="Miniature exemple 2">
-    <img src="./images/profil.png" alt="Avatar exemple">
-    <img src="./images/Papyjo à la dune du pilat.png" alt="Illustration exemple">
+    <img src="./images/profil.png" alt="Avatar exemple" class="square"> <!-- Format carré -->
+    <img src="./images/Papyjo à la dune du pilat.png" alt="Illustration exemple" class="square"> <!-- Format carré -->
 </div>
 
 <!-- ✅ Lien YouTube -->
