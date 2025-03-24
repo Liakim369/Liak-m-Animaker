@@ -4,10 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Liakïm Animaker</title>
-    <!-- Importation de la police Roboto -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* 🌌 Style général */
         body {
             font-family: 'Roboto', sans-serif;
             background: linear-gradient(135deg, #1a1a2e, #16213e);
@@ -24,7 +22,6 @@
             position: relative;
         }
 
-        /* 🌟 Ajout d'étoiles */
         body::before {
             content: '';
             position: absolute;
@@ -40,7 +37,6 @@
 
         h1 {
             font-size: 3rem;
-            color: #ffffff;
             text-transform: uppercase;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
             margin-top: 30px;
@@ -49,7 +45,6 @@
 
         .description {
             font-size: 1.2rem;
-            color: #ffffff;
             margin-bottom: 20px;
             max-width: 600px;
             line-height: 1.5;
@@ -58,35 +53,33 @@
         /* 📩 Formulaire */
         .form-container {
             background-color: rgba(0, 0, 0, 0.3);
-            padding: 20px;
+            padding: 15px;
             border-radius: 12px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.7);
             margin: 20px;
             max-width: 400px;
             width: 100%;
-            animation: fadeIn 0.5s ease;
             backdrop-filter: blur(8px);
         }
 
         input, textarea {
             width: 100%;
-            padding: 12px;
-            margin: 10px 0;
+            padding: 8px;
+            margin: 8px 0;
             border: 2px solid #e91e63;
             border-radius: 8px;
             outline: none;
-            font-size: 1rem;
+            font-size: 0.9rem;
             background-color: #333;
             color: #fff;
             box-sizing: border-box;
         }
 
-        /* ✅ Bouton d'envoi */
         .submit-btn {
             background-color: #ffffff;
             color: #000;
             border: none;
-            padding: 12px 20px;
+            padding: 10px;
             border-radius: 8px;
             cursor: pointer;
             transition: background-color 0.3s ease;
@@ -102,11 +95,6 @@
             transform: scale(1.05);
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
         /* 🖼️ Portfolio */
         .gallery {
             display: flex;
@@ -117,8 +105,8 @@
         }
 
         .gallery img {
-            width: 160px;
-            height: 90px;
+            width: 220px;
+            height: 120px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.5);
             transition: transform 0.3s ease;
@@ -129,7 +117,6 @@
             transform: scale(1.05);
         }
 
-        /* 🔗 Lien YouTube */
         .youtube-link {
             color: #ff4081;
             text-decoration: none;
@@ -143,7 +130,6 @@
             color: #e91e63;
         }
 
-        /* 💰 Tarifs */
         .pricing {
             margin-top: 30px;
             font-size: 1.2rem;
@@ -151,7 +137,6 @@
             color: #fff;
         }
 
-        /* ⚖️ Footer */
         footer {
             margin-top: 40px;
             font-size: 0.9rem;
@@ -163,37 +148,32 @@
 
 <h1>LIAKÏM ANIMAKER</h1>
 <p class="description">
-    Tu veux une bonne miniature Youtube ou simplement une illustration ? Tu es au bon endroit !
+    Tu veux une bonne miniature Youtube ou une illustration ? Tu es au bon endroit ! Je m'adapte à tes demandes et te fournis un dessin de qualité !
 </p>
 
-<!-- ✅ Formulaire directement affiché -->
-<!-- modify this form HTML and place wherever you want your form -->
-<form
-  action="https://formspree.io/f/mvgkkwkj"
-  method="POST"
->
-  <label>
-    Ton email:
-    <input type="Ton email" name="email">
-  </label>
-      <label>
-    Nom de ta chaîne (Youtube, Insta, Tik Tok):
-    <input type="Nom de ta chaîne" name="nom">
-  </label>
-  <label>
-    Décris ta miniature (sois précis!):
-    <textarea name="Décris ta miniature !"></textarea>
-  </label>
-  <!-- your other form fields go here -->
-  <button type="submit">Envoyer</button>
+<!-- ✅ Formulaire -->
+<form action="https://formspree.io/f/mvgkkwkj" method="POST">
+    <label>
+        Ton email:
+        <input type="email" name="email">
+    </label>
+    <label>
+        Nom de ta chaîne (Youtube, Insta, Tik Tok):
+        <input type="text" name="nom">
+    </label>
+    <label>
+        Décris ta miniature (sois précis!):
+        <textarea name="description"></textarea>
+    </label>
+    <button class="submit-btn" type="submit">Envoyer</button>
 </form>
-</div>
 
 <h2>✨ Portfolio ✨</h2>
 <div class="gallery">
     <img src="./images/minia.png" alt="Miniature exemple 1">
     <img src="./images/pok.png" alt="Miniature exemple 2">
     <img src="./images/profil.png" alt="Avatar exemple">
+    <img src="./images/Papyjo à la dune du pilat.png" alt="Illustration exemple"> <!-- ✅ Nouvelle image ajoutée -->
 </div>
 
 <a href="https://www.youtube.com/@liakimanimationoff" target="_blank" class="youtube-link">
@@ -201,10 +181,11 @@
 </a>
 
 <div class="pricing">
-    <p>- Miniature YouTube Simple: 15 € 💶</p>
-    <p>- Miniature YouTube Pro: 25 € 💶</p>
-    <p>- Illustration : 32 € 💶</p>
+    <p>- Miniature YouTube Simple (2h): 15 € 💶</p>
+    <p>- Miniature YouTube Pro (5h): 25 € 💶</p>
+    <p>- Illustration : 40 € 💶</p>
 </div>
+
 <footer>
     © 2025 Liakïm Animaker - Tous droits réservés
 </footer>
