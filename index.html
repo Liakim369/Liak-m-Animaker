@@ -35,14 +35,37 @@
             opacity: 0.4;
         }
 
-        h1 {
-            font-size: 3rem;
-            text-transform: uppercase;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        /* ✅ Titre + personnage */
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
             margin-top: 30px;
             margin-bottom: 10px;
         }
 
+        h1 {
+            font-size: 3rem;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            margin: 0;
+            white-space: nowrap;
+        }
+
+        .character {
+            width: 120px;
+            height: auto;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .character:hover {
+            transform: translateY(-10px) rotate(5deg);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* ✅ Description */
         .description {
             font-size: 1.2rem;
             margin-bottom: 20px;
@@ -50,8 +73,8 @@
             line-height: 1.5;
         }
 
-        /* 📩 Formulaire */
-        .form-container {
+        /* ✅ Formulaire */
+        form {
             background-color: rgba(0, 0, 0, 0.3);
             padding: 15px;
             border-radius: 12px;
@@ -95,7 +118,7 @@
             transform: scale(1.05);
         }
 
-        /* 🖼️ Portfolio */
+        /* ✅ Portfolio */
         .gallery {
             display: flex;
             gap: 20px;
@@ -117,6 +140,7 @@
             transform: scale(1.05);
         }
 
+        /* ✅ Lien YouTube */
         .youtube-link {
             color: #ff4081;
             text-decoration: none;
@@ -130,6 +154,7 @@
             color: #e91e63;
         }
 
+        /* ✅ Tarifs */
         .pricing {
             margin-top: 30px;
             font-size: 1.2rem;
@@ -137,6 +162,7 @@
             color: #fff;
         }
 
+        /* ✅ Footer */
         footer {
             margin-top: 40px;
             font-size: 0.9rem;
@@ -146,9 +172,14 @@
 </head>
 <body>
 
-<h1>LIAKÏM ANIMAKER</h1>
+<!-- ✅ Titre + Image -->
+<div class="header-container">
+    <h1>LIAKÏM ANIMAKER</h1>
+    <img src="Just Me.png" alt="Personnage" class="character" />
+</div>
+
 <p class="description">
-    Tu veux une bonne miniature Youtube ou une illustration ? Tu es au bon endroit ! Je m'adapte à tes demandes et te fournis un dessin de qualité !
+    Tu veux une bonne miniature Youtube ou simplement une illustration ? Tu es au bon endroit !
 </p>
 
 <!-- ✅ Formulaire -->
@@ -168,27 +199,33 @@
     <button class="submit-btn" type="submit">Envoyer</button>
 </form>
 
+<!-- ✅ Portfolio -->
 <h2>✨ Portfolio ✨</h2>
 <div class="gallery">
-    <img src="images/minia.png" alt="Miniature exemple 1">
-    <img src="images/pok.png" alt="Miniature exemple 2">
-    <img src="images/Papyjo à la dune du pilat.png" alt="Illustration exemple 1"> <!-- ✅ Nouvelle image ajoutée -->
+    <img src="./images/minia.png" alt="Miniature exemple 1">
+    <img src="./images/pok.png" alt="Miniature exemple 2">
+    <img src="./images/profil.png" alt="Avatar exemple">
+    <img src="./images/Papyjo à la dune du pilat.png" alt="Nouvelle image">
 </div>
 
+<!-- ✅ Lien YouTube -->
 <a href="https://www.youtube.com/@liakimanimationoff" target="_blank" class="youtube-link">
     Ma chaîne YouTube
 </a>
 
+<!-- ✅ Tarifs -->
 <div class="pricing">
-    <p>- Miniature YouTube Simple (2h): 15 € 💶</p>
-    <p>- Miniature YouTube Pro (5h): 25 € 💶</p>
-    <p>- Illustration : 40 € 💶</p>
+    <p>- Miniature YouTube Simple: 15 € 💶</p>
+    <p>- Miniature YouTube Pro: 25 € 💶</p>
+    <p>- Illustration : 32 € 💶</p>
 </div>
 
+<!-- ✅ Footer -->
 <footer>
     © 2025 Liakïm Animaker - Tous droits réservés
 </footer>
 
 </body>
 </html>
+
 
