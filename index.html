@@ -140,71 +140,37 @@
             transform: scale(1.05);
         }
 
-        /* ✅ Animation des étoiles */
-        .stars {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 300px;
-            pointer-events: none;
-            overflow: hidden;
-            z-index: 0;
+        /* ✅ Lien YouTube */
+        .youtube-link {
+            color: #ff4081;
+            text-decoration: none;
+            font-size: 1.2rem;
+            display: inline-block;
+            margin-top: 20px;
+            transition: color 0.3s ease;
         }
 
-        .star {
-            position: absolute;
-            background-color: #ffffff;
-            width: 3px;
-            height: 3px;
-            border-radius: 50%;
-            opacity: 0.8;
-            animation: float 4s infinite ease-in-out;
+        .youtube-link:hover {
+            color: #e91e63;
         }
 
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0px);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
+        /* ✅ Tarifs */
+        .pricing {
+            margin-top: 30px;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: #fff;
         }
 
-        /* ✅ Planète Saturne */
-        .saturn {
-            position: absolute;
-            left: -60px;
-            top: 50%;
-            width: 80px;
-            height: 80px;
-            background-image: url('https://upload.wikimedia.org/wikipedia/commons/e/e4/Saturn_true_color.jpg');
-            background-size: cover;
-            border-radius: 50%;
-            z-index: 10;
-            animation: floatSaturn 4s infinite ease-in-out;
+        /* ✅ Footer */
+        footer {
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: #aaa;
         }
-
-        /* ✅ Anneaux de Saturne */
-        .saturn::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 120px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.2);
-            border: 2px solid rgba(255, 255, 255, 0.4);
-            border-radius: 50%;
-            transform: translate(-50%, -50%) rotate(-20deg);
-        }
-
     </style>
 </head>
 <body>
-
-<!-- ✅ Étoiles -->
-<div class="stars"></div>
 
 <!-- ✅ Titre + Image -->
 <div class="header-container">
@@ -217,20 +183,52 @@
 </p>
 
 <!-- ✅ Formulaire -->
-<div style="position: relative;">
-    <div class="saturn"></div>
-    <form action="https://formspree.io/f/mvgkkwkj" method="POST">
-        <label>Ton email: <input type="email" name="email"></label>
-        <label>Nom de ta chaîne : <input type="text" name="nom"></label>
-        <label>Décris ta miniature : <textarea name="description"></textarea></label>
-        <button class="submit-btn" type="submit">Envoyer</button>
-    </form>
+<form action="https://formspree.io/f/mvgkkwkj" method="POST">
+    <label>
+        Ton email:
+        <input type="email" name="email">
+    </label>
+    <label>
+        Nom de ta chaîne (Youtube, Insta, Tik Tok):
+        <input type="text" name="nom">
+    </label>
+    <label>
+        Décris ta miniature (sois précis!):
+        <textarea name="description"></textarea>
+    </label>
+    <button class="submit-btn" type="submit">Envoyer</button>
+</form>
+
+<!-- ✅ Portfolio -->
+<h2>✨ Portfolio ✨</h2>
+<div class="gallery">
+    <img src="./images/minia.png" alt="Miniature exemple 1">
+    <img src="./images/pok.png" alt="Miniature exemple 2">
+    <img src="./images/profil.png" alt="Avatar exemple">
+    <img src="./images/Papyjo à la dune du pilat.png" alt="Illustration exemple">
 </div>
 
-<!-- ✅ Portfolio, YouTube, Tarifs, Footer -->
-<!-- (Je n'ai pas touché à cette partie car elle était bien structurée) -->
+<!-- ✅ Lien YouTube -->
+<a href="https://www.youtube.com/@liakimanimationoff" target="_blank" class="youtube-link">
+    Ma chaîne YouTube
+</a>
+
+<!-- ✅ Tarifs -->
+<div class="pricing">
+    <p>- Miniature YouTube Simple (2h): 15 € 💶</p>
+    <p>- Miniature YouTube Pro (5h): 25 € 💶</p>
+    <p>- Illustration : 40 € 💶</p>
+</div>
+
+<!-- ✅ Footer -->
+<footer>
+    © 2025 Liakïm Animaker - Tous droits réservés
+</footer>
 
 </body>
 </html>
+
+
+PEUX TU RAJOUTER UNE SORTE DE VAGUE (WAVE QUI TRAVERSE LA PAGE) UN PEU TRANSPARENT MULTICOLOR ? MONTRE MOI LE RENDU EN IMAGE ET SI CA ME VA RECOPIE TOUT lE HTML ET RAJOUTE LA VAGUE
 
 
