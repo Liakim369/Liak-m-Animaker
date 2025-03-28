@@ -83,6 +83,7 @@
             max-width: 400px;
             width: 100%;
             backdrop-filter: blur(8px);
+            box-sizing: border-box;
         }
 
         input, textarea {
@@ -92,7 +93,7 @@
             border: 2px solid #e91e63;
             border-radius: 8px;
             outline: none;
-            font-size: 0.9rem;
+            font-size: 1rem;
             background-color: #333;
             color: #fff;
             box-sizing: border-box;
@@ -120,16 +121,17 @@
 
         /* ✅ Portfolio */
         .gallery {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            justify-items: center;
             margin-top: 20px;
-            flex-wrap: wrap;
         }
 
         .gallery img {
-            width: 220px;
-            height: 120px;
+            width: 100%;
+            max-width: 220px;
+            height: auto;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.5);
             transition: transform 0.3s ease;
@@ -157,13 +159,13 @@
         /* ✅ Tarifs */
         .pricing {
             margin-top: 30px;
-            font-size: 1.2rem;
+            font-size: 1rem;
             line-height: 1.6;
             color: #fff;
+            padding: 0 10px;
+            text-align: center;
         }
-        <head>
-    <!-- ... (ton code existant) -->
-    <style>
+
         /* ✅ Animation des étoiles */
         .stars {
             position: fixed;
@@ -194,6 +196,33 @@
                 transform: translateY(-10px);
             }
         }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .header-container {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .character {
+                width: 100px;
+            }
+
+            .star {
+                width: 2px;
+                height: 2px;
+                opacity: 0.6;
+            }
+
+            .pricing {
+                font-size: 1rem;
+                padding: 0 10px;
+                text-align: center;
+            }
+        }
     </style>
 </head>
 <body>
@@ -202,7 +231,6 @@
 <div class="stars"></div>
 
 <script>
-    // ✅ Créer les étoiles
     function createStars() {
         const starsContainer = document.querySelector('.stars');
         const numStars = 50;
@@ -218,7 +246,6 @@
         }
     }
 
-    // ✅ Déplacement au scroll
     window.addEventListener('scroll', () => {
         const stars = document.querySelectorAll('.star');
         const scrollY = window.scrollY;
@@ -229,92 +256,8 @@
         });
     });
 
-    // ✅ Lancer la création des étoiles
     createStars();
 </script>
-
-</body>
-    </style>
-</head>
-<body>
-
-<!-- ✅ Titre + Image -->
-<div class="header-container">
-    <h1>LIAKÏM ANIMAKER</h1>
-    <img src="./images/Just Me.png" alt="Just ME" class="character" />
-</div>
-
-<p class="description">
-    Tu veux une bonne miniature Youtube ou simplement une illustration ? Tu es au bon endroit ! Je m'adapte à ton style et à ta demande !
-</p>
-
-<!-- ✅ Formulaire -->
-<form action="https://formspree.io/f/mvgkkwkj" method="POST">
-    <label>
-        Ton email:
-        <input type="email" name="email">
-    </label>
-    <label>
-        Nom de ta chaîne (Youtube, Insta, Tik Tok):
-        <input type="text" name="nom">
-    </label>
-    <label>
-        Décris ta miniature (sois précis!):
-        <textarea name="description"></textarea>
-    </label>
-    <button class="submit-btn" type="submit">Envoyer</button>
-</form>
-
-<!-- ✅ Portfolio -->
-<h2>✨ Portfolio ✨</h2>
-<div class="gallery">
-    <img src="./images/minia.png" alt="Miniature exemple 1">
-    <img src="./images/pok.png" alt="Miniature exemple 2">
-    <img src="./images/luigi.png" alt="Miniature exemple 3">
-    <img src="./images/mii.jpg" alt="Miniature exemple 4">
-    <img src="./images/profil.png" alt="Illustration exemple 1">
-    <img src="./images/mars.png" alt="Illustration exemple 2">    
-</div>
-
-<style>
-    .gallery {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
-        justify-items: center;
-        margin-top: 20px;
-    }
-
-    .gallery img {
-        width: 220px;
-        height: 120px;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.5);
-        transition: transform 0.3s ease;
-        object-fit: cover;
-    }
-
-    .gallery img:hover {
-        transform: scale(1.05);
-    }
-</style>
-
-<!-- ✅ Lien YouTube -->
-<a href="https://www.youtube.com/@liakimanimationoff" target="_blank" class="youtube-link">
-    Ma chaîne YouTube
-</a>
-
-<!-- ✅ Tarifs -->
-<div class="pricing">
-    <p>- Miniature YouTube Simple (2h): 15 € 💶</p>
-    <p>- Miniature YouTube Pro (5h): 25 € 💶</p>
-    <p>- Illustration : 40 € 💶</p>
-</div>
-
-<!-- ✅ Footer -->
-<footer>
-    © 2025 Liakïm Animaker - Tous droits réservés
-</footer>
 
 </body>
 </html>
