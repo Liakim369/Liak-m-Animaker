@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -272,16 +272,6 @@
         }
     }
 
-    window.addEventListener('scroll', () => {
-        const stars = document.querySelectorAll('.star');
-        const scrollY = window.scrollY;
-
-        stars.forEach(star => {
-            const speed = parseFloat(star.style.animationDuration);
-            star.style.transform = `translateY(${scrollY * (0.05 / speed)}px)`;
-        });
-    });
-
     createStars();
 </script>
 
@@ -343,3 +333,4 @@
 
 </body>
 </html>
+
