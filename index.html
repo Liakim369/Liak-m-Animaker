@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -144,10 +144,14 @@
             display: inline-block;
             margin-top: 20px;
             transition: color 0.3s ease;
+            background-color: #333;
+            padding: 10px 20px;
+            border-radius: 5px;
         }
 
         .youtube-link:hover {
             color: #e91e63;
+            background-color: #222;
         }
 
         .pricing {
@@ -155,6 +159,30 @@
             font-size: 1.2rem;
             line-height: 1.6;
             color: #fff;
+        }
+
+        /* Tarifs - Tableau */
+        .pricing-table {
+            margin-top: 20px;
+            border-collapse: collapse;
+            width: 60%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .pricing-table th, .pricing-table td {
+            padding: 15px;
+            text-align: center;
+            border: 1px solid #e91e63;
+        }
+
+        .pricing-table th {
+            background-color: #1a1a2e;
+            color: #ff4081;
+        }
+
+        .pricing-table td {
+            background-color: #333;
         }
 
         /* Étoiles */
@@ -333,14 +361,35 @@
     Ma chaîne YouTube
 </a>
 
-<!-- Tarifs -->
+<!-- Tarifs - Tableau -->
 <h2>✨ Tarifs ✨</h2>
-<div class="pricing">
-    <p>- Miniature YouTube Simple (2h): 15 € 💶</p>
-    <p>- Miniature YouTube Pro (5h): 25 € 💶</p>
-    <p>- Illustration : 40 € 💶</p>
-</div>
-    
+<table class="pricing-table">
+    <thead>
+        <tr>
+            <th>Service</th>
+            <th>Durée</th>
+            <th>Prix</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Miniature YouTube Simple</td>
+            <td>2h</td>
+            <td>15 € 💶</td>
+        </tr>
+        <tr>
+            <td>Miniature YouTube Pro</td>
+            <td>5h</td>
+            <td>25 € 💶</td>
+        </tr>
+        <tr>
+            <td>Illustration</td>
+            <td>-</td>
+            <td>40 € 💶</td>
+        </tr>
+    </tbody>
+</table>
+
 <!-- Footer -->
 <footer>
     © 2025 Liakïm Animaker - Tous droits réservés
