@@ -143,15 +143,14 @@
             font-size: 1.2rem;
             display: inline-block;
             margin-top: 20px;
+            padding: 10px;
+            background-color: rgba(255, 255, 0, 0.3);
+            border-radius: 20px;
             transition: color 0.3s ease;
-            background-color: #333;
-            padding: 10px 20px;
-            border-radius: 5px;
         }
 
         .youtube-link:hover {
             color: #e91e63;
-            background-color: #222;
         }
 
         .pricing {
@@ -159,30 +158,37 @@
             font-size: 1.2rem;
             line-height: 1.6;
             color: #fff;
+            margin-bottom: 50px; /* Added space between pricing and footer */
         }
 
-        /* Tarifs - Tableau */
+        /* Table styling for pricing */
         .pricing-table {
-            margin-top: 20px;
-            border-collapse: collapse;
-            width: 60%;
-            margin-left: auto;
-            margin-right: auto;
+            width: 100%;
+            max-width: 500px;
+            margin: 20px auto;
+            border-radius: 12px;
+            border: 2px solid #e91e63;
+            overflow: hidden;
+            background-color: rgba(0, 0, 0, 0.3);
         }
 
-        .pricing-table th, .pricing-table td {
-            padding: 15px;
+        .pricing-table th,
+        .pricing-table td {
+            padding: 10px;
             text-align: center;
-            border: 1px solid #e91e63;
+            font-size: 1rem;
         }
 
         .pricing-table th {
-            background-color: #1a1a2e;
-            color: #ff4081;
+            background-color: #e91e63;
         }
 
-        .pricing-table td {
+        .pricing-table tr:nth-child(even) {
             background-color: #333;
+        }
+
+        .pricing-table tr:nth-child(odd) {
+            background-color: #444;
         }
 
         /* Étoiles */
@@ -361,34 +367,24 @@
     Ma chaîne YouTube
 </a>
 
-<!-- Tarifs - Tableau -->
+<!-- Tarifs -->
 <h2>✨ Tarifs ✨</h2>
-<table class="pricing-table">
-    <thead>
+<div class="pricing">
+    <table class="pricing-table">
         <tr>
-            <th>Service</th>
-            <th>Durée</th>
-            <th>Prix</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Miniature YouTube Simple</td>
-            <td>2h</td>
+            <th>Miniature YouTube Simple (2h)</th>
             <td>15 € 💶</td>
         </tr>
         <tr>
-            <td>Miniature YouTube Pro</td>
-            <td>5h</td>
+            <th>Miniature YouTube Pro (5h)</th>
             <td>25 € 💶</td>
         </tr>
         <tr>
-            <td>Illustration</td>
-            <td>-</td>
+            <th>Illustration</th>
             <td>40 € 💶</td>
         </tr>
-    </tbody>
-</table>
+    </table>
+</div>
 
 <!-- Footer -->
 <footer>
@@ -397,4 +393,3 @@
 
 </body>
 </html>
-
