@@ -151,20 +151,10 @@
         }
 
         .pricing {
-            margin-top: 10px; /* Réduit l'espace entre le titre "Tarifs" et les prix */
+            margin-top: 30px;
             font-size: 1.2rem;
             line-height: 1.6;
             color: #fff;
-        }
-
-        /* Augmente la taille de police des prix */
-        .pricing p {
-            font-size: 1.4rem;
-        }
-
-        .pricing p span {
-            font-size: 1.6rem; /* Taille augmentée pour les prix */
-            font-weight: bold;
         }
 
         /* Étoiles */
@@ -177,6 +167,8 @@
             pointer-events: none;
             overflow: hidden;
             z-index: 0;
+            opacity: 1;
+            transition: opacity 0.5s ease-out;
         }
 
         .star {
@@ -282,20 +274,20 @@
         }
     }
 
-    createStars();
-
-    window.addEventListener('scroll', function() {
+    function handleScroll() {
         const starsContainer = document.querySelector('.stars');
-        const scrollPosition = window.scrollY + window.innerHeight;
-        const documentHeight = document.documentElement.scrollHeight;
+        const scrollY = window.scrollY;
 
-        // Masquer les étoiles lorsque l'on atteint le bas de la page
-        if (scrollPosition >= documentHeight) {
-            starsContainer.style.opacity = '0';
+        if (scrollY > 50) {
+            starsContainer.style.opacity = '0';  // Masquer les étoiles si on défile vers le bas
         } else {
-            starsContainer.style.opacity = '1';
+            starsContainer.style.opacity = '1';  // Afficher les étoiles si on est en haut de la page
         }
-    });
+    }
+
+    window.addEventListener('scroll', handleScroll);
+
+    createStars();
 </script>
 
 <!-- Titre + Image -->
@@ -344,11 +336,11 @@
 <!-- Tarifs -->
 <h2>✨ Tarifs ✨</h2>
 <div class="pricing">
-    <p><span>Miniature YouTube Simple (2h): 15 € 💶</span></p>
-    <p><span>Miniature YouTube Pro (5h): 25 € 💶</span></p>
-    <p><span>Illustration : 40 € 💶</span></p>
+    <p>- Miniature YouTube Simple (2h): 15 € 💶</p>
+    <p>- Miniature YouTube Pro (5h): 25 € 💶</p>
+    <p>- Illustration : 40 € 💶</p>
 </div>
-
+    
 <!-- Footer -->
 <footer>
     © 2025 Liakïm Animaker - Tous droits réservés
@@ -356,5 +348,4 @@
 
 </body>
 </html>
-
 
