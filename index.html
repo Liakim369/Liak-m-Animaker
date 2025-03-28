@@ -167,6 +167,8 @@
             pointer-events: none;
             overflow: hidden;
             z-index: 0;
+            opacity: 1;
+            transition: opacity 0.5s ease-out;
         }
 
         .star {
@@ -272,6 +274,19 @@
         }
     }
 
+    function handleScroll() {
+        const starsContainer = document.querySelector('.stars');
+        const scrollY = window.scrollY;
+
+        if (scrollY > 50) {
+            starsContainer.style.opacity = '0';  // Masquer les étoiles si on défile vers le bas
+        } else {
+            starsContainer.style.opacity = '1';  // Afficher les étoiles si on est en haut de la page
+        }
+    }
+
+    window.addEventListener('scroll', handleScroll);
+
     createStars();
 </script>
 
@@ -325,7 +340,7 @@
     <p>- Miniature YouTube Pro (5h): 25 € 💶</p>
     <p>- Illustration : 40 € 💶</p>
 </div>
-
+    
 <!-- Footer -->
 <footer>
     © 2025 Liakïm Animaker - Tous droits réservés
