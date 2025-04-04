@@ -6,6 +6,74 @@
     <title>Liakïm Animaker</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        <label>
+    Décris ta miniature (sois précis!):
+    <textarea name="description"></textarea>
+</label>
+
+<!-- Bouton de téléchargement -->
+<label class="upload-btn-container">
+    <input type="file" name="file" class="file-input" accept="image/*, .pdf, .txt, .docx">
+    <span class="upload-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="upload-icon">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 10l5 5 5-5H7z"/>
+        </svg>
+    </span>
+</label>
+
+<style>
+    /* Styles pour le textarea */
+    textarea {
+        width: 100%;
+        padding: 8px;
+        margin: 8px 0;
+        border: 2px solid #e91e63;
+        border-radius: 8px;
+        outline: none;
+        font-size: 0.9rem;
+        background-color: #333;
+        color: #fff;
+        box-sizing: border-box;
+        min-height: 100px;  /* Ajouter de l'espace pour la description */
+    }
+
+    /* Style pour le bouton de téléchargement */
+    .upload-btn-container {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    .file-input {
+        display: none;  /* Masque l'élément d'entrée de fichier */
+    }
+
+    .upload-btn {
+        position: absolute;
+        bottom: 8px;
+        left: 8px;
+        background-color: #e91e63;
+        padding: 10px;
+        border-radius: 50%;
+        color: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        transition: transform 0.3s ease;
+    }
+
+    .upload-btn:hover {
+        transform: scale(1.1);
+    }
+
+    .upload-icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    /* Changer l'icône à l'intérieur du bouton */
+    .upload-btn:hover .upload-icon {
+        fill: white;
+    }
+</style>
         body {
             font-family: 'Roboto', sans-serif;
             background: linear-gradient(135deg, #1a1a2e, #16213e);
