@@ -362,15 +362,10 @@
 
 <!-- Portfolio -->
 <h2>✨ Portfolio ✨</h2>
-<div class="scrolling-gallery-container">
-    <div class="scrolling-gallery">
-        <img src="./images/minia.png" alt="Miniature exemple 1">
-        <img src="./images/pok.png" alt="Miniature exemple 2">
-        <img src="./images/luigi.png" alt="Miniature exemple 3">
-        <img src="./images/mii.jpg" alt="Miniature exemple 4">
-        <img src="./images/profil.png" alt="Illustration exemple 1">
-        <img src="./images/mars.png" alt="Illustration exemple 2">
-        <!-- doublage pour effet infini -->
+<h2>✨ Portfolio ✨</h2>
+<div class="carousel-container">
+    <button class="carousel-btn prev" onclick="prevSlide()">❮</button>
+    <div class="carousel-track" id="carouselTrack">
         <img src="./images/minia.png" alt="Miniature exemple 1">
         <img src="./images/pok.png" alt="Miniature exemple 2">
         <img src="./images/luigi.png" alt="Miniature exemple 3">
@@ -378,6 +373,7 @@
         <img src="./images/profil.png" alt="Illustration exemple 1">
         <img src="./images/mars.png" alt="Illustration exemple 2">
     </div>
+    <button class="carousel-btn next" onclick="nextSlide()">❯</button>
 </div>
 
 <!-- Lien YouTube -->
