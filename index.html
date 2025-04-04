@@ -116,25 +116,40 @@
             transform: scale(1.05);
         }
 
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            justify-items: center;
-            margin-top: 20px;
+        .scrolling-gallery-container {
+            width: 100%;
+            overflow: hidden;
+            margin: 30px 0;
+            position: relative;
         }
 
-        .gallery img {
+        .scrolling-gallery {
+            display: flex;
+            animation: scrollGallery 40s linear infinite;
+            gap: 20px;
+        }
+
+        .scrolling-gallery img {
             width: 220px;
             height: 120px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.5);
-            transition: transform 0.3s ease;
             object-fit: cover;
+            flex-shrink: 0;
+            transition: transform 0.3s ease;
         }
 
-        .gallery img:hover {
+        .scrolling-gallery img:hover {
             transform: scale(1.05);
+        }
+
+        @keyframes scrollGallery {
+            0% {
+                transform: translateX(0%);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
         }
 
         .youtube-link {
@@ -144,7 +159,7 @@
             display: inline-block;
             margin-top: 20px;
             padding: 10px;
-            background-color: rgba(255, 255, 0, 0.7); /* Moins transparent */
+            background-color: rgba(255, 255, 0, 0.7);
             border-radius: 20px;
             transition: color 0.3s ease;
         }
@@ -158,18 +173,17 @@
             font-size: 1.2rem;
             line-height: 1.6;
             color: #fff;
-            margin-bottom: 40px; /* Espace plus grand entre le tableau et les droits réservés */
+            margin-bottom: 40px;
         }
 
-        /* Table styling for pricing */
         .pricing-table {
             width: 100%;
             max-width: 500px;
-            margin: 20px auto; /* Espacement entre le tableau et autres éléments */
+            margin: 20px auto;
             border-radius: 12px;
             border: 2px solid #e91e63;
             overflow: hidden;
-            background-color: rgba(0, 0, 0, 0.3); /* Style similaire au formulaire */
+            background-color: rgba(0, 0, 0, 0.3);
         }
 
         .pricing-table th,
@@ -180,7 +194,7 @@
         }
 
         .pricing-table th {
-            background-color: #444; /* Pas rose, fond sombre comme le formulaire */
+            background-color: #444;
             color: #fff;
         }
 
@@ -192,7 +206,6 @@
             background-color: #444;
         }
 
-        /* Étoiles */
         .stars {
             position: fixed;
             top: 0;
@@ -225,7 +238,6 @@
             }
         }
 
-        /* Media Queries pour responsive design */
         @media (max-width: 768px) {
             .header-container {
                 flex-direction: column;
@@ -248,12 +260,13 @@
                 max-width: 90%;
             }
 
-            .gallery {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
             .pricing {
                 font-size: 1rem;
+            }
+
+            .scrolling-gallery img {
+                width: 180px;
+                height: 100px;
             }
         }
 
@@ -278,19 +291,19 @@
                 max-width: 95%;
             }
 
-            .gallery {
-                grid-template-columns: 1fr;
-            }
-
             .pricing {
                 font-size: 0.9rem;
+            }
+
+            .scrolling-gallery img {
+                width: 160px;
+                height: 90px;
             }
         }
     </style>
 </head>
 <body>
 
-<!-- Étoiles -->
 <div class="stars"></div>
 
 <script>
@@ -313,19 +326,14 @@
         const starsContainer = document.querySelector('.stars');
         const scrollY = window.scrollY;
 
-        if (scrollY > 50) {
-            starsContainer.style.opacity = '0';  // Masquer les étoiles si on défile vers le bas
-        } else {
-            starsContainer.style.opacity = '1';  // Afficher les étoiles si on est en haut de la page
-        }
+        starsContainer.style.opacity = scrollY > 50 ? '0' : '1';
     }
 
     window.addEventListener('scroll', handleScroll);
-
     createStars();
 </script>
 
-<!-- Titre + Image -->
+<!-- Titre -->
 <div class="header-container">
     <h1>LIAKÏM ANIMAKER</h1>
     <img src="./images/Just Me.png" alt="Just ME" class="character" />
@@ -354,13 +362,22 @@
 
 <!-- Portfolio -->
 <h2>✨ Portfolio ✨</h2>
-<div class="gallery">
-    <img src="./images/minia.png" alt="Miniature exemple 1">
-    <img src="./images/pok.png" alt="Miniature exemple 2">
-    <img src="./images/luigi.png" alt="Miniature exemple 3">
-    <img src="./images/mii.jpg" alt="Miniature exemple 4">
-    <img src="./images/profil.png" alt="Illustration exemple 1">
-    <img src="./images/mars.png" alt="Illustration exemple 2">    
+<div class="scrolling-gallery-container">
+    <div class="scrolling-gallery">
+        <img src="./images/minia.png" alt="Miniature exemple 1">
+        <img src="./images/pok.png" alt="Miniature exemple 2">
+        <img src="./images/luigi.png" alt="Miniature exemple 3">
+        <img src="./images/mii.jpg" alt="Miniature exemple 4">
+        <img src="./images/profil.png" alt="Illustration exemple 1">
+        <img src="./images/mars.png" alt="Illustration exemple 2">
+        <!-- doublage pour effet infini -->
+        <img src="./images/minia.png" alt="Miniature exemple 1">
+        <img src="./images/pok.png" alt="Miniature exemple 2">
+        <img src="./images/luigi.png" alt="Miniature exemple 3">
+        <img src="./images/mii.jpg" alt="Miniature exemple 4">
+        <img src="./images/profil.png" alt="Illustration exemple 1">
+        <img src="./images/mars.png" alt="Illustration exemple 2">
+    </div>
 </div>
 
 <!-- Lien YouTube -->
