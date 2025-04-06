@@ -345,34 +345,49 @@
         Nom de ta chaîne (Youtube, Insta, Tik Tok):
         <input type="text" name="nom" required>
     </label>
-    <label style="position: relative;">
+
+    <label style="position: relative; display: block;">
         Décris ta miniature (sois précis!):
-        <textarea name="description" required></textarea>
+        <textarea name="description" required style="padding-bottom: 70px;"></textarea>
 
- <label style="position: relative; display: block;">
-    Décris ta miniature (sois précis!):
-    <textarea name="description" required style="padding-bottom: 60px;"></textarea>
+        <!-- Bouton d'import fichiers -->
+        <label for="file-upload" style="
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background-color: #e91e63;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+        ">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="white" height="20" width="20" viewBox="0 0 24 24">
+                <path d="M5 15l7-7 7 7H5z"/>
+            </svg>
+        </label>
 
-    <!-- Bouton icône flèche rond rose -->
-    <label for="file-upload" style="
-        position: absolute;
-        bottom: 10px;
-        right: 10px;
-        background-color: #e91e63;
-        border-radius: 50%;
-        width: 40px;
-        height: 40px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.4);
-    ">
-        <!-- Icône flèche vers le haut -->
-        <svg xmlns="http://www.w3.org/2000/svg" fill="white" height="20" width="20" viewBox="0 0 24 24">
-            <path d="M5 15l7-7 7 7H5z"/>
-        </svg>
+        <!-- Input fichier masqué -->
+        <input type="file" name="images" id="file-upload" multiple accept="image/*" style="display: none;">
+
+        <!-- Vignettes des fichiers -->
+        <div id="preview" style="
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            max-width: 60%;
+        "></div>
     </label>
+
+    <button class="submit-btn" type="submit">Envoyer</button>
+</form>
+
 
     <!-- Input fichier masqué -->
     <input type="file" name="images" id="file-upload" multiple accept="image/*" style="display: none;">
@@ -434,6 +449,32 @@
 <footer>
     © 2025 Liakïm Animaker - Tous droits réservés
 </footer>
+<script>
+    const fileInput = document.getElementById('file-upload');
+    const previewContainer = document.getElementById('preview');
+
+    fileInput.addEventListener('change', function () {
+        previewContainer.innerHTML = '';
+        const files = Array.from(this.files);
+
+        files.forEach(file => {
+            if (!file.type.startsWith('image/')) return;
+
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                const img = document.createElement('img');
+                img.src = e.target.result;
+                img.style.width = '40px';
+                img.style.height = '40px';
+                img.style.objectFit = 'cover';
+                img.style.borderRadius = '5px';
+                img.style.boxShadow = '0 0 4px rgba(0,0,0,0.5)';
+                previewContainer.appendChild(img);
+            };
+            reader.readAsDataURL(file);
+        });
+    });
+</script>
 
 </body>
 </html>
