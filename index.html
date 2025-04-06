@@ -325,14 +325,6 @@
     createStars();
 </script>
 
-<!-- Bouton Importer -->
-<label for="file-upload" class="upload-btn">Importer des fichiers</label>
-<input type="file" id="file-upload" name="files" accept="image/*" style="display: none;" multiple onchange="previewFiles()">
-
-<div class="thumbnail-preview" id="thumbnail-preview">
-<!-- Les vignettes des fichiers importés s'afficheront ici -->
-</div>
-
 <!-- Titre + Image -->
 <div class="header-container">
     <h1>LIAKÏM ANIMAKER</h1>
@@ -357,6 +349,13 @@
         Décris ta miniature (sois précis!):
         <textarea name="description"></textarea>
     </label>
+    <!-- Bouton Importer -->
+<label for="file-upload" class="upload-btn">Importer des fichiers</label>
+<input type="file" id="file-upload" name="files" accept="image/*" style="display: none;" multiple onchange="previewFiles()">
+
+<div class="thumbnail-preview" id="thumbnail-preview">
+<!-- Les vignettes des fichiers importés s'afficheront ici -->
+</div>
     <button class="submit-btn" type="submit">Envoyer</button>
 </form>
 
