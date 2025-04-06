@@ -350,6 +350,20 @@
         Décris ta miniature (sois précis!):
         <textarea name="description" required style="padding-bottom: 70px;"></textarea>
 
+        <form action="https://formspree.io/f/mABC1234" method="POST" enctype="multipart/form-data">
+  <label>
+    Ton email :
+    <input type="email" name="email" required>
+  </label>
+
+  <label>
+    Importer une image :
+    <input type="file" name="attachment" accept="image/*" multiple>
+  </label>
+
+  <button type="submit">Envoyer</button>
+</form>
+
         <!-- Bouton d'import fichiers -->
         <label for="file-upload" style="
             position: absolute;
