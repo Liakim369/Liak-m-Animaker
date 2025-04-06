@@ -336,57 +336,67 @@
 </p>
 
 <!-- Formulaire -->
-<form action="https://formspree.io/f/mvgkkwkj" method="POST">
+<form action="https://formspree.io/f/mvgkkwkj" method="POST" enctype="multipart/form-data" id="contact-form">
     <label>
         Ton email:
-        <input type="email" name="email">
+        <input type="email" name="email" required>
     </label>
     <label>
         Nom de ta chaîne (Youtube, Insta, Tik Tok):
-        <input type="text" name="nom">
+        <input type="text" name="nom" required>
     </label>
-    <label>
+    <label style="position: relative;">
         Décris ta miniature (sois précis!):
-        <textarea name="description"></textarea>
-    </label>
-    <!-- Bouton Importer -->
-<label for="file-upload" class="upload-btn">Importer des fichiers</label>
-<input type="file" id="file-upload" name="files" accept="image/*" style="display: none;" multiple onchange="previewFiles()">
+        <textarea name="description" required></textarea>
 
-<div class="thumbnail-preview" id="thumbnail-preview">
-<!-- Les vignettes des fichiers importés s'afficheront ici -->
-</div>
+        <!-- Bouton pour importer des fichiers (en bas à droite) -->
+        <input type="file" name="images" id="file-upload" multiple accept="image/*"
+               style="position: absolute; right: 0; bottom: -45px; cursor: pointer; font-size: 0.85rem; background: #e91e63; color: white; padding: 6px 12px; border-radius: 8px; border: none;">
+        
+        <!-- Miniatures des fichiers (en bas à gauche) -->
+        <div id="preview" style="position: absolute; bottom: -80px; left: 0; display: flex; gap: 5px; flex-wrap: wrap;"></div>
+    </label>
+
     <button class="submit-btn" type="submit">Envoyer</button>
 </form>
 
-<!-- Ton script de prévisualisation -->
-    <script>
-    function previewFiles() {
+<script>
     const fileInput = document.getElementById('file-upload');
-    const previewContainer = document.getElementById('thumbnail-preview');
-    previewContainer.innerHTML = ''; // Clear any previous previews
+    const previewContainer = document.getElementById('preview');
 
-    const files = fileInput.files;
-    for (let i = 0; i < files.length; i++) {
-    const file = files[i];
-    const reader = new FileReader();
+    fileInput.addEventListener('change', function () {
+        previewContainer.innerHTML = '';
+        const files = Array.from(this.files);
 
-    reader.onload = function(event) {
-    const img = document.createElement('img');
-    img.src = event.target.result;
-    previewContainer.appendChild(img);
-            }
+        files.forEach(file => {
+            if (!file.type.startsWith('image/')) return;
 
-    reader.readAsDataURL(file);
-        }
-    }
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                const img = document.createElement('img');
+                img.src = e.target.result;
+                img.style.width = '40px';
+                img.style.height = '40px';
+                img.style.objectFit = 'cover';
+                img.style.borderRadius = '5px';
+                img.style.boxShadow = '0 0 4px rgba(0,0,0,0.5)';
+                previewContainer.appendChild(img);
+            };
+            reader.readAsDataURL(file);
+        });
+    });
 </script>
+
+
 <!-- Portfolio -->
 <h2>✨ Portfolio ✨</h2>
 <div class="gallery">
     <img src="./images/minia.png" alt="Miniature exemple 1">
     <img src="./images/pok.png" alt="Miniature exemple 2">
-    <img src="./images/luigi.png" alt="Miniature exemple 3">    
+    <img src="./images/luigi.png" alt="Miniature exemple 3">
+    <img src="./images/mii.jpg" alt="Miniature exemple 4">
+    <img src="./images/profil.png" alt="Illustration exemple 1">
+    <img src="./images/mars.png" alt="Illustration exemple 2">    
 </div>
 
 <!-- Lien YouTube -->
