@@ -325,6 +325,14 @@
     createStars();
 </script>
 
+<!-- Bouton Importer -->
+<label for="file-upload" class="upload-btn">Importer des fichiers</label>
+<input type="file" id="file-upload" name="files" accept="image/*" style="display: none;" multiple onchange="previewFiles()">
+
+<div class="thumbnail-preview" id="thumbnail-preview">
+<!-- Les vignettes des fichiers importés s'afficheront ici -->
+</div>
+
 <!-- Titre + Image -->
 <div class="header-container">
     <h1>LIAKÏM ANIMAKER</h1>
@@ -351,6 +359,27 @@
     </label>
     <button class="submit-btn" type="submit">Envoyer</button>
 </form>
+
+<!-- Ton script de prévisualisation -->
+    function previewFiles() {
+    const fileInput = document.getElementById('file-upload');
+    const previewContainer = document.getElementById('thumbnail-preview');
+    previewContainer.innerHTML = ''; // Clear any previous previews
+
+    const files = fileInput.files;
+    for (let i = 0; i < files.length; i++) {
+    const file = files[i];
+    const reader = new FileReader();
+
+    reader.onload = function(event) {
+    const img = document.createElement('img');
+    img.src = event.target.result;
+    previewContainer.appendChild(img);
+            }
+
+    reader.readAsDataURL(file);
+        }
+    }
 
 <!-- Portfolio -->
 <h2>✨ Portfolio ✨</h2>
