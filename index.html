@@ -1,310 +1,310 @@
-!DOCTYPE html 
-html lang=fr
-head
-    meta charset=UTF-8
-    meta name=viewport content=width=device-width, initial-scale=1.0
-    titleLiakïm Animakertitle
-    link href=httpsfonts.googleapis.comcss2family=Robotowght@400;700&display=swap rel=stylesheet
-    style
+créé moi un bouton ou on peut importer des fichiers (galerie, téléchargement de l'utilisateur). Le bouton "importer" est à droite dans la case "décris ta miniature". Lorsque des éléments sont importés, on doit les voir en petit carré dans la case "décris ta miniature" en bas à gauche pour que l'utilisateur puisse savoir. Pour ca met tout ce qui est nécéssaire dans l'html suivant et recopiant son intégralité : <!DOCTYPE html> 
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liakïm Animaker</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
         body {
-            font-family 'Roboto', sans-serif;
-            background linear-gradient(135deg, #1a1a2e, #16213e);
-            color #ffffff;
-            margin 0;
-            padding 0;
-            text-align center;
-            overflow-x hidden;
-            height 100vh;
-            display flex;
-            flex-direction column;
-            align-items center;
-            justify-content flex-start;
-            position relative;
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            overflow-x: hidden;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            position: relative;
         }
 
-        bodybefore {
-            content '';
-            position absolute;
-            top 0;
-            left 0;
-            width 100%;
-            height 100%;
-            background radial-gradient(circle, rgba(255,255,255,0.15) 1px, transparent 1px);
-            background-size 20px 20px;
-            z-index -1;
-            opacity 0.4;
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255,255,255,0.15) 1px, transparent 1px);
+            background-size: 20px 20px;
+            z-index: -1;
+            opacity: 0.4;
         }
 
         .header-container {
-            display flex;
-            align-items center;
-            justify-content center;
-            gap 20px;
-            margin-top 30px;
-            margin-bottom 10px;
-            flex-wrap wrap;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
         }
 
         h1 {
-            font-size 3rem;
-            text-transform uppercase;
-            text-shadow 2px 2px 4px rgba(0, 0, 0, 0.7);
-            margin 0;
-            white-space nowrap;
+            font-size: 3rem;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            margin: 0;
+            white-space: nowrap;
         }
 
         .character {
-            width 120px;
-            height auto;
-            transition transform 0.3s ease, box-shadow 0.3s ease;
-            cursor pointer;
+            width: 120px;
+            height: auto;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
         }
 
-        .characterhover {
-            transform translateY(-10px) rotate(5deg);
-            box-shadow 0 10px 20px rgba(0, 0, 0, 0.2);
+        .character:hover {
+            transform: translateY(-10px) rotate(5deg);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
 
         .description {
-            font-size 1.2rem;
-            margin-bottom 20px;
-            max-width 600px;
-            line-height 1.5;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            max-width: 600px;
+            line-height: 1.5;
         }
 
         form {
-            background-color rgba(0, 0, 0, 0.3);
-            padding 15px;
-            border-radius 12px;
-            box-shadow 0 4px 8px rgba(0,0,0,0.7);
-            margin 20px;
-            max-width 400px;
-            width 100%;
-            backdrop-filter blur(8px);
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.7);
+            margin: 20px;
+            max-width: 400px;
+            width: 100%;
+            backdrop-filter: blur(8px);
         }
 
         input, textarea {
-            width 100%;
-            padding 8px;
-            margin 8px 0;
-            border 2px solid #e91e63;
-            border-radius 8px;
-            outline none;
-            font-size 0.9rem;
-            background-color #333;
-            color #fff;
-            box-sizing border-box;
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0;
+            border: 2px solid #e91e63;
+            border-radius: 8px;
+            outline: none;
+            font-size: 0.9rem;
+            background-color: #333;
+            color: #fff;
+            box-sizing: border-box;
         }
 
         .submit-btn {
-            background-color #ffffff;
-            color #000;
-            border none;
-            padding 10px;
-            border-radius 8px;
-            cursor pointer;
-            transition background-color 0.3s ease;
-            font-size 1rem;
-            width 100%;
-            margin-top 10px;
-            font-weight bold;
-            box-shadow 0 4px 8px rgba(0,0,0,0.3);
+            background-color: #ffffff;
+            color: #000;
+            border: none;
+            padding: 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 1rem;
+            width: 100%;
+            margin-top: 10px;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
         }
 
-        .submit-btnhover {
-            background-color #f1f1f1;
-            transform scale(1.05);
+        .submit-btn:hover {
+            background-color: #f1f1f1;
+            transform: scale(1.05);
         }
 
         .gallery {
-            display grid;
-            grid-template-columns repeat(3, 1fr);
-            gap 20px;
-            justify-items center;
-            margin-top 20px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            justify-items: center;
+            margin-top: 20px;
         }
 
         .gallery img {
-            width 220px;
-            height 120px;
-            border-radius 8px;
-            box-shadow 0 4px 8px rgba(0,0,0,0.5);
-            transition transform 0.3s ease;
-            object-fit cover;
+            width: 220px;
+            height: 120px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+            transition: transform 0.3s ease;
+            object-fit: cover;
         }
 
-        .gallery imghover {
-            transform scale(1.05);
+        .gallery img:hover {
+            transform: scale(1.05);
         }
 
         .youtube-link {
-            color #ffffff;
-            text-decoration none;
-            font-size 1.2rem;
-            display inline-block;
-            margin-top 20px;
-            padding 10px;
-            background-color rgba(255, 255, 0, 0.7);  Moins transparent 
-            border-radius 20px;
-            transition color 0.3s ease;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: rgba(255, 255, 0, 0.7); /* Moins transparent */
+            border-radius: 20px;
+            transition: color 0.3s ease;
         }
 
-        .youtube-linkhover {
-            color #e91e63;
+        .youtube-link:hover {
+            color: #e91e63;
         }
 
         .pricing {
-            margin-top 20px;
-            font-size 1.2rem;
-            line-height 1.6;
-            color #fff;
-            margin-bottom 40px;  Espace plus grand entre le tableau et les droits réservés 
+            margin-top: 20px;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: #fff;
+            margin-bottom: 40px; /* Espace plus grand entre le tableau et les droits réservés */
         }
 
-         Table styling for pricing 
+        /* Table styling for pricing */
         .pricing-table {
-            width 100%;
-            max-width 500px;
-            margin 20px auto;  Espacement entre le tableau et autres éléments 
-            border-radius 12px;
-            border 2px solid #e91e63;
-            overflow hidden;
-            background-color rgba(0, 0, 0, 0.3);  Style similaire au formulaire 
+            width: 100%;
+            max-width: 500px;
+            margin: 20px auto; /* Espacement entre le tableau et autres éléments */
+            border-radius: 12px;
+            border: 2px solid #e91e63;
+            overflow: hidden;
+            background-color: rgba(0, 0, 0, 0.3); /* Style similaire au formulaire */
         }
 
         .pricing-table th,
         .pricing-table td {
-            padding 10px;
-            text-align center;
-            font-size 1rem;
+            padding: 10px;
+            text-align: center;
+            font-size: 1rem;
         }
 
         .pricing-table th {
-            background-color #444;  Pas rose, fond sombre comme le formulaire 
-            color #fff;
+            background-color: #444; /* Pas rose, fond sombre comme le formulaire */
+            color: #fff;
         }
 
-        .pricing-table trnth-child(even) {
-            background-color #333;
+        .pricing-table tr:nth-child(even) {
+            background-color: #333;
         }
 
-        .pricing-table trnth-child(odd) {
-            background-color #444;
+        .pricing-table tr:nth-child(odd) {
+            background-color: #444;
         }
 
-         Étoiles 
+        /* Étoiles */
         .stars {
-            position fixed;
-            top 0;
-            left 0;
-            width 100%;
-            height 300px;
-            pointer-events none;
-            overflow hidden;
-            z-index 0;
-            opacity 1;
-            transition opacity 0.5s ease-out;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 300px;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 0;
+            opacity: 1;
+            transition: opacity 0.5s ease-out;
         }
 
         .star {
-            position absolute;
-            background-color #ffffff;
-            width 3px;
-            height 3px;
-            border-radius 50%;
-            opacity 0.8;
-            animation float 4s infinite ease-in-out;
+            position: absolute;
+            background-color: #ffffff;
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: float 4s infinite ease-in-out;
         }
 
         @keyframes float {
             0%, 100% {
-                transform translateY(0px);
+                transform: translateY(0px);
             }
             50% {
-                transform translateY(-10px);
+                transform: translateY(-10px);
             }
         }
 
-         Media Queries pour responsive design 
-        @media (max-width 768px) {
+        /* Media Queries pour responsive design */
+        @media (max-width: 768px) {
             .header-container {
-                flex-direction column;
+                flex-direction: column;
             }
 
             h1 {
-                font-size 2.5rem;
+                font-size: 2.5rem;
             }
 
             .character {
-                width 100px;
+                width: 100px;
             }
 
             .description {
-                font-size 1rem;
-                max-width 100%;
+                font-size: 1rem;
+                max-width: 100%;
             }
 
             form {
-                max-width 90%;
+                max-width: 90%;
             }
 
             .gallery {
-                grid-template-columns repeat(2, 1fr);
+                grid-template-columns: repeat(2, 1fr);
             }
 
             .pricing {
-                font-size 1rem;
+                font-size: 1rem;
             }
         }
 
-        @media (max-width 480px) {
+        @media (max-width: 480px) {
             .header-container {
-                gap 10px;
+                gap: 10px;
             }
 
             h1 {
-                font-size 2rem;
+                font-size: 2rem;
             }
 
             .character {
-                width 80px;
+                width: 80px;
             }
 
             .description {
-                font-size 0.9rem;
+                font-size: 0.9rem;
             }
 
             form {
-                max-width 95%;
+                max-width: 95%;
             }
 
             .gallery {
-                grid-template-columns 1fr;
+                grid-template-columns: 1fr;
             }
 
             .pricing {
-                font-size 0.9rem;
+                font-size: 0.9rem;
             }
         }
-    style
-head
-body
+    </style>
+</head>
+<body>
 
-!-- Étoiles --
-div class=starsdiv
+<!-- Étoiles -->
+<div class="stars"></div>
 
-script
+<script>
     function createStars() {
         const starsContainer = document.querySelector('.stars');
         const numStars = 50;
 
-        for (let i = 0; i  numStars; i++) {
+        for (let i = 0; i < numStars; i++) {
             const star = document.createElement('div');
             star.classList.add('star');
-            star.style.left = ${Math.random()  100}vw;
-            star.style.top = ${Math.random()  100}px;
-            star.style.animationDuration = ${2 + Math.random()  3}s;
-            star.style.width = star.style.height = ${Math.random()  4 + 1}px;
+            star.style.left = ${Math.random() * 100}vw;
+            star.style.top = ${Math.random() * 100}px;
+            star.style.animationDuration = ${2 + Math.random() * 3}s;
+            star.style.width = star.style.height = ${Math.random() * 4 + 1}px;
             starsContainer.appendChild(star);
         }
     }
@@ -313,85 +313,85 @@ script
         const starsContainer = document.querySelector('.stars');
         const scrollY = window.scrollY;
 
-        if (scrollY  50) {
-            starsContainer.style.opacity = '0';   Masquer les étoiles si on défile vers le bas
+        if (scrollY > 50) {
+            starsContainer.style.opacity = '0';  // Masquer les étoiles si on défile vers le bas
         } else {
-            starsContainer.style.opacity = '1';   Afficher les étoiles si on est en haut de la page
+            starsContainer.style.opacity = '1';  // Afficher les étoiles si on est en haut de la page
         }
     }
 
     window.addEventListener('scroll', handleScroll);
 
     createStars();
-script
+</script>
 
-!-- Titre + Image --
-div class=header-container
-    h1LIAKÏM ANIMAKERh1
-    img src=.imagesJust Me.png alt=Just ME class=character 
-div
+<!-- Titre + Image -->
+<div class="header-container">
+    <h1>LIAKÏM ANIMAKER</h1>
+    <img src="./images/Just Me.png" alt="Just ME" class="character" />
+</div>
 
-p class=description
-    Tu veux une bonne miniature Youtube ou simplement une illustration  Tu es au bon endroit ! Je m'adapte à ton style et à ta demande !
-p
+<p class="description">
+    Tu veux une bonne miniature Youtube ou simplement une illustration ? Tu es au bon endroit ! Je m'adapte à ton style et à ta demande !
+</p>
 
-!-- Formulaire --
-form action=httpsformspree.iofmvgkkwkj method=POST
-    label
-        Ton email
-        input type=email name=email
-    label
-    label
-        Nom de ta chaîne (Youtube, Insta, Tik Tok)
-        input type=text name=nom
-    label
-    label
-        Décris ta miniature (sois précis!)
-        textarea name=descriptiontextarea
-    label
-    button class=submit-btn type=submitEnvoyerbutton
-form
+<!-- Formulaire -->
+<form action="https://formspree.io/f/mvgkkwkj" method="POST">
+    <label>
+        Ton email:
+        <input type="email" name="email">
+    </label>
+    <label>
+        Nom de ta chaîne (Youtube, Insta, Tik Tok):
+        <input type="text" name="nom">
+    </label>
+    <label>
+        Décris ta miniature (sois précis!):
+        <textarea name="description"></textarea>
+    </label>
+    <button class="submit-btn" type="submit">Envoyer</button>
+</form>
 
-!-- Portfolio --
-h2✨ Portfolio ✨h2
-div class=gallery
-    img src=.imagesminia.png alt=Miniature exemple 1
-    img src=.imagespok.png alt=Miniature exemple 2
-    img src=.imagesluigi.png alt=Miniature exemple 3
-div
+<!-- Portfolio -->
+<h2>✨ Portfolio ✨</h2>
+<div class="gallery">
+    <img src="./images/minia.png" alt="Miniature exemple 1">
+    <img src="./images/pok.png" alt="Miniature exemple 2">
+    <img src="./images/luigi.png" alt="Miniature exemple 3"> 
+</div>
 
-!-- Lien YouTube --
-a href=httpswww.youtube.com@liakimanimationoff target=_blank class=youtube-link
+<!-- Lien YouTube -->
+<a href="https://www.youtube.com/@liakimanimationoff" target="_blank" class="youtube-link">
     Ma chaîne YouTube
-a
+</a>
 
-!-- Tarifs --
-h2✨ Tarifs ✨h2
-div class=pricing
-    table class=pricing-table
-        tr
-            thMiniature YouTube Simple (2h)
-                p style=font-size 12px;Je t'illustre une miniature simple mais efficace (34 jours d'attentes)pth
-            td15 € 💶td
-        tr
-        tr
-            thMiniature YouTube Pro (5h)
-                p style=font-size 12px;Je te fournis un rendu propre et de qualité (12 semaines d'attente)pth
+<!-- Tarifs -->
+<h2>✨ Tarifs ✨</h2>
+<div class="pricing">
+    <table class="pricing-table">
+        <tr>
+            <th>Miniature YouTube Simple (2h)
+                <p style="font-size: 12px;">Je t'illustre une miniature simple mais efficace (3/4 jours d'attentes)</p></th>
+            <td>15 € 💶</td>
+        </tr>
+        <tr>
+            <th>Miniature YouTube Pro (5h)
+                <p style="font-size: 12px;">Je te fournis un rendu propre et de qualité (1/2 semaines d'attente)</p></th>
             
-            td25 € 💶td
-        tr
-        tr
-            thIllustration
-                p style=font-size 12px;Destiné à des demandes personnelles pour des dessins sur-mesure, créés selon vos préférences (23 semaines d'attente)pth
-            td40 € 💶td
-        tr
-    table
-div
+            <td>25 € 💶</td>
+        </tr>
+        <tr>
+            <th>Illustration
+                <p style="font-size: 12px;">Destiné à des demandes personnelles pour des dessins sur-mesure, créés selon vos préférences (2/3 semaines d'attente)</p></th>
+            <td>40 € 💶</td>
+        </tr>
+    </table>
+</div>
 
-!-- Footer --
-footer
+<!-- Footer -->
+<footer>
     © 2025 Liakïm Animaker - Tous droits réservés
-footer
+</footer>
 
-body
-html
+</body>
+</html>
