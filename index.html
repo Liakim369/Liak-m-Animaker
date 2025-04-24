@@ -26,8 +26,8 @@
     @keyframes fadeInBlur {
       0% {
         opacity: 0;
-        filter: blur(5px);
-        transform: translateY(-10px);
+        filter: blur(10px);
+        transform: translateY(-20px);
       }
       100% {
         opacity: 1;
@@ -50,8 +50,8 @@
       font-size: 3.2rem;
       font-weight: 800;
       margin-bottom: 10px;
-      text-shadow: 0 0 4px #00e5ff, 0 0 8px #00e5ff;
-      animation: fadeInBlur 1s ease-out;
+      text-shadow: 0 0 10px #00e5ff, 0 0 20px #00e5ff;
+      animation: fadeInBlur 1.5s ease-out;
       display: inline-block;
     }
 
@@ -66,7 +66,7 @@
       font-size: 1.2rem;
       color: #cccccc;
       margin-bottom: 30px;
-      animation: fadeInBlur 1.2s ease-out;
+      animation: fadeInBlur 2s ease-out;
     }
 
     .hero-buttons {
@@ -74,7 +74,7 @@
       justify-content: center;
       gap: 15px;
       flex-wrap: wrap;
-      animation: fadeInBlur 1.4s ease-out;
+      animation: fadeInBlur 2.5s ease-out;
     }
 
     .btn-primary {
@@ -167,12 +167,12 @@
       font-size: 1rem;
       width: 100%;
       transition: all 0.3s ease;
-      box-shadow: 0 0 12px #00e5ff, 0 0 24px rgba(0, 229, 255, 0.4);
+      box-shadow: none;  /* Glow removed here */
     }
 
     .submit-btn:hover {
       background-color: #00bcd4;
-      box-shadow: 0 0 18px #00e5ff, 0 0 32px rgba(0, 229, 255, 0.6);
+      box-shadow: none;  /* Glow removed here */
     }
 
     .gallery {
@@ -260,7 +260,7 @@
 
 <!-- Hero Section -->
 <section class="hero">
-  <h1>Liakïm Animaker</h1>
+  <h1>Liakïm Animaker<span class="plane">✈️</span></h1>
   <p class="hero-subtitle">Miniatures, illustrations, animations… rapides et stylées !</p>
   <div class="hero-buttons">
     <a href="#formulaire" class="btn-primary">Je commande</a>
@@ -303,29 +303,5 @@
 <h2>✨ Tarifs ✨</h2>
 <table class="pricing-table">
   <tr>
-    <th>Miniature simple (3/4 jours)</th>
-    <td>30 € 💶</td>
-  </tr>
-  <tr>
-    <th>Logo / Design (1/2 semaines)</th>
-    <td>25 € 💶</td>
-  </tr>
-  <tr>
-    <th>Illustration sur-mesure (2/3 semaines)</th>
-    <td>30 à 50 € 💶</td>
-  </tr>
-  <tr>
-    <th>Animation (3s à 60s, 1/4 semaines)</th>
-    <td>30 à 100 € 💶</td>
-  </tr>
-</table>
-
-<!-- Footer -->
-<footer>
-  © 2025 Liakïm Animaker - Tous droits réservés<br>
-  Merci pour ta visite !
-</footer>
-
-</body>
-</html>
+    <th>Miniature simple (
 
