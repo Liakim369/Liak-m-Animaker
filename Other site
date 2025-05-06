@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MOI C'EST MIKAÏL</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: radial-gradient(ellipse at bottom, #1d0033 0%, #0a001a 100%);
+      overflow-x: hidden;
+      color: #fff;
+      scroll-behavior: smooth;
+    }
+
+    .stars {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: transparent url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
+      animation: twinkle 4s infinite ease-in-out;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 0.8; }
+    }
+
+    header {
+      text-align: center;
+      padding: 2em 1em;
+      background: transparent;
+      z-index: 1000;
+    }
+
+    header h1 {
+      font-size: 2.8em;
+      margin: 0;
+      font-weight: 600;
+      color: #ffccff;
+      text-shadow: 0 0 6px #ff00ff88, 0 0 12px #ff00ff55;
+    }
+
+    section {
+      padding: 2em 1em;
+      margin: 2em auto;
+      max-width: 800px;
+      background: rgba(255, 255, 255, 0.04);
+      border-radius: 16px;
+      border: 1px solid rgba(255, 0, 255, 0.15);
+      box-shadow: 0 0 20px rgba(255, 0, 255, 0.2);
+      backdrop-filter: blur(6px);
+      position: relative;
+      z-index: 1;
+    }
+
+    h2 {
+      font-size: 1.7em;
+      color: #ffb3ff;
+      margin-bottom: 1em;
+    }
+
+    .video-wrapper {
+      margin-top: 1em;
+      display: flex;
+      justify-content: center;
+    }
+
+    iframe {
+      width: 100%;
+      max-width: 100%;
+      height: 215px;
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(255, 0, 255, 0.3);
+    }
+
+    .music-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.2em;
+      gap: 0.8em;
+      flex-wrap: wrap;
+    }
+
+    .music-item img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #ff00ff55;
+    }
+
+    .music-item audio {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .description-block {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 1em;
+      border-radius: 12px;
+      margin-top: 1.5em;
+      box-shadow: 0 0 10px rgba(255, 0, 255, 0.15);
+    }
+
+    a {
+      color: #ff99ff;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2em;
+      background: rgba(20, 0, 40, 0.9);
+      font-size: 0.9em;
+      color: #aaa;
+      z-index: 2;
+      position: relative;
+    }
+
+    @media screen and (max-width: 768px) {
+      header h1 { font-size: 2em; }
+      section { padding: 1.5em 1em; margin: 1.5em auto; }
+      iframe { height: 200px; }
+    }
+
+    @media screen and (max-width: 480px) {
+      .music-item {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .music-item img { width: 100%; height: auto; }
+    }
+  </style>
+</head>
+<body>
+  <div class="stars"></div>
+
+  <header>
+    <h1>MOI C'EST MIKAÏL</h1>
+  </header>
+
+  <section id="liakim-animation">
+    <h2>LIAKÏM ANIMATION</h2>
+    <div class="description-block">
+      <p>Ma chaîne YouTube d'animation. Créée il y a plusieurs années, cette chaîne se perfectionne au fur et à mesure du temps.</p>
+	  <p>Rejoins mon univers ici :</p>
+      <p><a href="https://www.youtube.com/@liakimanimationoff" target="_blank">➡️ Voir la chaîne YouTube</a></p>
+    </div>
+    <div class="video-wrapper">
+      <iframe src="https://www.youtube.com/embed/I0A3Z_TQXm4" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <section id="liakim-music">
+    <h2>LIAKÏM MUSIC</h2>
+    <div class="description-block">
+      <p> T'aimes le rap, la house, l'éléctro ou encore la trap ?</p>
+	  <p>Écoute ici mes musiques en exclusivité 🎧</p>
+    </div>
+
+    <div class="music-item">
+      <img src="image1.jpg" alt="Cover 1">
+      <audio controls><source src="musique1.mp3" type="audio/mpeg"></audio>
+    </div>
+    <div class="music-item">
+      <img src="image2.jpg" alt="Cover 2">
+      <audio controls><source src="musique2.mp3" type="audio/mpeg"></audio>
+    </div>
+    <div class="music-item">
+      <img src="image3.jpg" alt="Cover 3">
+      <audio controls><source src="musique3.mp3" type="audio/mpeg"></audio>
+    </div>
+    <div class="music-item">
+      <img src="image4.jpg" alt="Cover 4">
+      <audio controls><source src="musique4.mp3" type="audio/mpeg"></audio>
+    </div>
+    <div class="music-item">
+      <img src="image5.jpg" alt="Cover 5">
+      <audio controls><source src="musique5.mp3" type="audio/mpeg"></audio>
+    </div>
+  </section>
+
+  <section id="farfa-prod">
+    <h2>FARFALALOINDRE PROD</h2>
+    <div class="description-block">
+      <p>Ayant recu le prix du jury à un festival de courts métrages, mes amis et moi ne pouvons plus nous passer de cet hobby qui est de filmer tout ce qu'on fait ! vive le cinéma ! Merci à  Camille et Clément :)
+	  <p>Abonne toi à cette chaîne YouTube pour encore plus de délires et de fun !:</p>
+      <p><a href="https://www.youtube.com/@farfaprodoff" target="_blank">➡️ Voir la chaîne FARFALALOINDRE PROD</a></p>
+    </div>
+    <div class="video-wrapper">
+      <iframe src="https://www.youtube.com/embed/RFIYidK5L9E" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <section id="liakim-animaker">
+    <h2>LIAKÏM ANIMAKER</h2>
+    <div class="description-block">
+      <p>Découvre mon autre site où je propose mes services ! Logo, animation, miniature, illustration... Je dessine tout selon tes préférences et ton styles ;) :</p>
+      <p><a href="https://liakim-animaker.netlify.app/" target="_blank">➡️ Accéder à LIAKÏM ANIMAKER</a></p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Mikaïl Milli - Sorin | Tous droits réservés</p>
+                	<p> Merci pour ta visite !</p>
+  </footer>
+</body>
+</html>
