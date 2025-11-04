@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Liakïm Animaker</title>
+  <title>Liakïm Music</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
   <style>
     body {
@@ -51,9 +51,7 @@
       padding-top: 80px;
     }
 
-    nav.open {
-      right: 0;
-    }
+    nav.open { right: 0; }
 
     nav ul {
       list-style: none;
@@ -73,11 +71,8 @@
       font-weight: bold;
     }
 
-    nav ul li a:hover {
-      text-decoration: underline;
-    }
+    nav ul li a:hover { text-decoration: underline; }
 
-    /* Reste du style */
     canvas#stars {
       position: fixed;
       top: 0;
@@ -95,21 +90,8 @@
     }
 
     @keyframes fadeInBlur {
-      0% {
-        opacity: 0;
-        filter: blur(10px);
-        transform: translateY(-20px);
-      }
-      100% {
-        opacity: 1;
-        filter: blur(0px);
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes planeFloat {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-5px); }
+      0% { opacity: 0; filter: blur(10px); transform: translateY(-20px); }
+      100% { opacity: 1; filter: blur(0); transform: translateY(0); }
     }
 
     .hero {
@@ -123,14 +105,6 @@
       margin-bottom: 10px;
       text-shadow: 0 0 10px #00e5ff, 0 0 20px #00e5ff;
       animation: fadeInBlur 1s ease-out;
-      display: inline-block;
-    }
-
-    .plane {
-      display: inline-block;
-      margin-left: 10px;
-      animation: planeFloat 2s ease-in-out infinite;
-      font-size: 2rem;
     }
 
     .hero-subtitle {
@@ -164,41 +138,48 @@
       box-shadow: 0 0 16px #00e5ff;
     }
 
-    .header-container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      margin-bottom: 30px;
+    .description {
+      text-align: center;
+      font-size: 1.2rem;
+      margin: 20px auto;
+      max-width: 600px;
+      line-height: 1.5;
+      padding: 0 15px;
     }
 
     h2 {
       text-align: center;
       font-size: 2rem;
-      margin-top: 50px;
+      margin-top: 60px;
     }
 
-    .character {
-      width: 120px;
-      height: auto;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: pointer;
+    /* Audio gallery */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 0 20px;
     }
 
-    .character:hover {
-      transform: translateY(-10px) rotate(5deg);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    }
-
-    .description {
+    .track {
+      background-color: rgba(255,255,255,0.05);
+      padding: 20px;
+      border-radius: 12px;
       text-align: center;
-      font-size: 1.2rem;
-      margin-bottom: 20px;
-      max-width: 600px;
-      line-height: 1.5;
-      margin: auto;
-      padding: 0 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+      transition: transform 0.3s ease;
+    }
+
+    .track:hover { transform: translateY(-5px); }
+
+    .track p { font-weight: 700; color: #00e5ff; }
+
+    .track audio {
+      width: 100%;
+      margin-top: 10px;
+      border-radius: 8px;
     }
 
     form {
@@ -214,6 +195,7 @@
     label {
       display: block;
       margin-bottom: 12px;
+      font-weight: 600;
     }
 
     input, textarea {
@@ -225,6 +207,7 @@
       color: #fff;
       font-size: 1rem;
       box-sizing: border-box;
+      margin-bottom: 15px;
     }
 
     .submit-btn {
@@ -240,26 +223,7 @@
       transition: all 0.3s ease;
     }
 
-    .submit-btn:hover {
-      background-color: #00bcd4;
-    }
-
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-      max-width: 900px;
-      margin: 30px auto;
-      padding: 0 20px;
-    }
-
-    .gallery img {
-      width: 100%;
-      height: 130px;
-      border-radius: 10px;
-      object-fit: cover;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.5);
-    }
+    .submit-btn:hover { background-color: #00bcd4; }
 
     .pricing-table {
       width: 100%;
@@ -286,6 +250,10 @@
       font-weight: bold;
     }
 
+    .pricing-table tr:hover {
+      background-color: rgba(0,229,255,0.1);
+    }
+
     footer {
       text-align: center;
       padding: 30px 10px;
@@ -294,24 +262,16 @@
     }
 
     @media (max-width: 600px) {
-      .hero h1 {
-        font-size: 2.2rem;
-      }
-
-      .description {
-        font-size: 1rem;
-      }
-
-      .plane {
-        font-size: 1.5rem;
-      }
+      .hero h1 { font-size: 2.4rem; }
+      .description { font-size: 1rem; }
+      .hero-buttons a { width: 100%; text-align: center; }
     }
   </style>
 </head>
 <body>
 
 <!-- MENU BURGER -->
-<div class="menu-toggle" onclick="toggleMenu()">
+<div class="menu-toggle" onclick="toggleMenu()" aria-label="Menu">
   <span></span>
   <span></span>
   <span></span>
@@ -319,8 +279,8 @@
 
 <nav id="menu">
   <ul>
-    <li><a href="#formulaire">Passe ta commande</a></li>
-    <li><a href="#portfolio">Mon portfolio</a></li>
+    <li><a href="#formulaire">Commander</a></li>
+    <li><a href="#portfolio">Écouter</a></li>
     <li><a href="#tarifs">Tarifs</a></li>
   </ul>
 </nav>
@@ -329,21 +289,24 @@
   function toggleMenu() {
     document.getElementById("menu").classList.toggle("open");
   }
+  document.querySelectorAll('nav ul li a').forEach(link => {
+    link.addEventListener('click', () => {
+      document.getElementById('menu').classList.remove('open');
+    });
+  });
 </script>
 
-<!-- Étoiles -->
+<!-- FOND D'ÉTOILES -->
 <canvas id="stars"></canvas>
 <script>
   const canvas = document.getElementById("stars");
   const ctx = canvas.getContext("2d");
-
   let stars = [];
 
   function resizeCanvas() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
   }
-
   window.addEventListener("resize", resizeCanvas);
   resizeCanvas();
 
@@ -379,73 +342,78 @@
   drawStars();
 </script>
 
-<!-- Hero Section -->
+<!-- Hero -->
 <section class="hero">
-  <h1>Liakïm Animaker</h1>
-  <p class="hero-subtitle">Miniatures, illustrations, animations… rapides et stylées !</p>
+  <h1>Liakïm Music</h1>
+  <p class="hero-subtitle">Beats, compositions, mixage — un son unique pour ton univers 🎶</p>
   <div class="hero-buttons">
-    <a href="#formulaire" class="btn-primary">Je commande</a>
-    <a href="https://www.youtube.com/@liakimanimationoff" target="_blank" class="btn-primary">Ma Chaîne Youtube</a>
+    <a href="#formulaire" class="btn-primary">Commander un son</a>
+    <a href="https://www.youtube.com/@liakimanimationoff" target="_blank" class="btn-primary">Écouter plus</a>
   </div>
 </section>
 
-<!-- Présentation -->
-<div class="header-container">
-  <img src="./images/Just Me.png" alt="Just ME" class="character" />
+<!-- Description -->
+<p class="description">
+  Tu veux un beat sur mesure, une musique d'ambiance, ou un morceau complet ?  
+  Je compose, mixe et arrange selon ton style : rap, chill, électro, et plus encore.
+</p>
+
+<!-- Écoute -->
+<h2 id="portfolio">🎧 Mes créations 🎧</h2>
+<div class="gallery">
+  <div class="track">
+    <p>Beat Chill</p>
+    <audio controls>
+      <source src="./music/beat1.mp3" type="audio/mpeg">
+      Ton navigateur ne supporte pas l'audio.
+    </audio>
+  </div>
+  <div class="track">
+    <p>Ambiance Électro</p>
+    <audio controls>
+      <source src="./music/beat2.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+  <div class="track">
+    <p>Trap Vibe</p>
+    <audio controls>
+      <source src="./music/beat3.mp3" type="audio/mpeg">
+    </audio>
+  </div>
 </div>
 
-<p class="description">
-  Tu veux une bonne miniature Youtube ou simplement une illustration ? Tu es au bon endroit ! Je m'adapte à ton style et à ta demande !
-</p>
+<!-- Tarifs -->
+<h2 id="tarifs">💶 Tarifs 💶</h2>
+<table class="pricing-table">
+  <tr><th>Beat simple (1/2 jours)</th><td>20 €</td></tr>
+  <tr><th>Morceau complet (1/2 semaines)</th><td>50 €</td></tr>
+  <tr><th>Composition sur-mesure</th><td>60 à 150 €</td></tr>
+  <tr><th>Mixage / Mastering</th><td>30 à 70 €</td></tr>
+</table>
 
 <!-- Formulaire -->
 <form id="formulaire" action="https://formspree.io/f/mvgkkwkj" method="POST">
-  <label for="email">Ton email:</label>
-  <input type="email" name="email" id="email" required>
+  <label for="email">Ton email :</label>
+  <input type="email" name="email" id="email" placeholder="exemple@gmail.com" required>
 
-  <label for="nom">Nom de ta chaîne:</label>
-  <input type="text" name="nom" id="nom" required>
+  <label for="nom">Nom d'artiste / chaîne :</label>
+  <input type="text" name="nom" id="nom" placeholder="Ton blaze ou ta chaîne" required>
 
-  <label for="description">Décris ta miniature:</label>
-  <textarea name="description" id="description" rows="4" required></textarea>
+  <label for="style">Style / Genre musical :</label>
+  <input type="text" name="style" id="style" placeholder="Rap, Chill, Électro..." required>
+
+  <label for="description">Ta demande :</label>
+  <textarea name="description" id="description" rows="4" placeholder="Décris ton projet musical..." required></textarea>
 
   <button class="submit-btn" type="submit">Envoyer</button>
 </form>
 
-<!-- Portfolio -->
-<h2 id="portfolio">✨ Portfolio ✨</h2>
-<div class="gallery">
-  <img src="./images/minia.png" alt="Miniature exemple 1">
-  <img src="./images/pok.png" alt="Miniature exemple 2">
-  <img src="./images/luigi.png" alt="Miniature exemple 3"> 
-</div>
-
-<!-- Tarifs -->
-<h2 id="tarifs">✨ Tarifs ✨</h2>
-<table class="pricing-table">
-  <tr>
-    <th>Miniature simple (3/4 jours)</th>
-    <td>30 € 💶</td>
-  </tr>
-  <tr>
-    <th>Logo / Design (1/2 semaines)</th>
-    <td>25 € 💶</td>
-  </tr>
-  <tr>
-    <th>Illustration sur-mesure (2/3 semaines)</th>
-    <td>30 à 50 € 💶</td>
-  </tr>
-  <tr>
-    <th>Animation (3s à 60s) (1/4 semaines)</th>
-    <td>30 à 100 € 💶</td>
-  </tr>
-</table>
-
 <!-- Footer -->
 <footer>
-  © 2025 Liakïm Animaker - Tous droits réservés<br>
-  Merci pour ta visite !
+  © 2025 Liakïm Music - Tous droits réservés<br>
+  Créé avec ❤️ pour la musique.
 </footer>
 
 </body>
 </html>
+
